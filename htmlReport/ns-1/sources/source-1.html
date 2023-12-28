@@ -1,0 +1,156 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1251"> 
+  <title>Coverage Report > TwoListNumbers</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">seminar6</a>
+</div>
+
+<h1>Coverage Summary for Class: TwoListNumbers (seminar6)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TwoListNumbers</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/14)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package seminar6;
+&nbsp;
+&nbsp;/*
+&nbsp;Задание 1.
+&nbsp;Создайте программу на Python или Java, которая принимает два списка чисел и выполняет следующие действия:
+&nbsp;a. Рассчитывает среднее значение каждого списка.
+&nbsp;b. Сравнивает эти средние значения и выводит соответствующее сообщение:
+&nbsp;- Первый список имеет большее среднее значение&quot;&quot;, если среднее значение первого списка больше.
+&nbsp;- Второй список имеет большее среднее значение&quot;&quot;, если среднее значение второго списка больше.
+&nbsp;- Средние значения равны&quot;&quot;, если средние значения списков равны.
+&nbsp;Важно:
+&nbsp;Приложение должно быть написано в соответствии с принципами объектно-ориентированного программирования.
+&nbsp;Используйте Pytest (для Python) или JUnit (для Java) для написания тестов, которые проверяют правильность работы программы. Тесты должны учитывать различные сценарии использования вашего приложения.
+&nbsp;Используйте pylint (для Python) или Checkstyle (для Java) для проверки качества кода.
+&nbsp;Сгенерируйте отчет о покрытии кода тестами. Ваша цель - достичь минимум 90% покрытия.
+&nbsp;*/
+&nbsp;
+&nbsp;import java.util.Arrays;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;
+&nbsp;public class TwoListNumbers {
+&nbsp;    List&lt;Integer&gt; firstList;
+&nbsp;    List&lt;Integer&gt; secondList;
+&nbsp;
+<b class="fc">&nbsp;    public TwoListNumbers(List&lt;Integer&gt; firstList, List&lt;Integer&gt; secondList) {</b>
+<b class="fc">&nbsp;        this.firstList = firstList;</b>
+<b class="fc">&nbsp;        this.secondList = secondList;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public double calculateAverageValueList(List&lt;Integer&gt; numsList) {
+<b class="fc">&nbsp;        double sum = numsList.stream().reduce(0, Integer::sum);</b>
+<b class="fc">&nbsp;        return sum / numsList.size();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String compareAverageValueLists(List&lt;Integer&gt; listOne, List&lt;Integer&gt; listTwo) {
+<b class="fc">&nbsp;        double firstAvg = calculateAverageValueList(listOne);</b>
+<b class="fc">&nbsp;        double secondAvg = calculateAverageValueList(listTwo);</b>
+&nbsp;
+<b class="fc">&nbsp;        if (listOne.isEmpty() || listTwo.isEmpty()) {</b>
+<b class="fc">&nbsp;            return &quot;Один или оба списка пустые, сравнивать нечего!&quot;;</b>
+&nbsp;        }
+&nbsp;
+<b class="fc">&nbsp;        if (firstAvg &gt; secondAvg) {</b>
+<b class="fc">&nbsp;            return &quot;Первый список имеет большее среднее значение&quot;;</b>
+<b class="fc">&nbsp;        } else if (firstAvg &lt; secondAvg) {</b>
+<b class="fc">&nbsp;            return &quot;Второй список имеет большее среднее значение&quot;;</b>
+&nbsp;        } else {
+<b class="fc">&nbsp;            return &quot;Средние значения равны&quot;;</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-12-27 21:11</div>
+</div>
+</body>
+</html>
